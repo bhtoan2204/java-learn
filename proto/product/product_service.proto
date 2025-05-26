@@ -1,0 +1,31 @@
+syntax = "proto3";
+package com.example.java_projects.proto;
+
+option go_package = "gateway/proto/product;product";
+option java_multiple_files = true;
+
+message GetProductRequest {
+  string product_id = 1;
+}
+
+message GetProductResponse {
+  string product_id = 1;
+  string name = 2;
+  string description = 3;
+  double price = 4;
+}
+
+message ListProductsRequest {
+  int32 page = 1;
+  int32 page_size = 2;
+}
+
+message ListProductsResponse {
+  repeated GetProductResponse products = 1;
+  int32 total_count = 2;
+}
+
+service ProductService {
+  rpc GetProduct (GetProductRequest) returns (GetProductResponse);
+  rpc ListProducts (ListProductsRequest) returns (ListProductsResponse);
+}
