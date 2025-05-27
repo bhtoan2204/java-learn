@@ -1,4 +1,22 @@
 services:
+  axon-server:
+    image: axoniq/axonserver
+    hostname: axon-server
+    ports:
+      - 8024:8024
+      - 8124:8124
+      - 8224:8224
+    environment:
+      AXONIQ_AXONSERVER_DEVMODE_ENABLED: "true"
+      AXONIQ_AXONSERVER_GRPC_TIMEOUT: "30000"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8024/actuator/health"]
+      interval: 5s
+      timeout: 10s
+      retries: 10
+    volumes:
+      - ./docker/axonserver/config:/axonserver/config
+      
   postgres:
     image: postgres:15
     environment:

@@ -1,8 +1,6 @@
-package com.example.java_projects.application.command;
+package com.example.java_projects.application.event;
 
 import java.math.BigDecimal;
-
-import org.axonframework.modelling.command.TargetAggregateIdentifier;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -13,9 +11,8 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class CreateProductCommand {
+public class ProductCreatedEvent {
 
-    @TargetAggregateIdentifier
     private String productId;
 
     private String name;
