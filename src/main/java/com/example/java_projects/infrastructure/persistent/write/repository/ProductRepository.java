@@ -36,15 +36,15 @@ public interface ProductRepository extends JpaRepository<Product, String>, JpaSp
 
     @Modifying
     @Query("UPDATE Product p SET p.stockQuantity = p.stockQuantity - :quantity WHERE p.id = :productId AND p.stockQuantity >= :quantity")
-    int decreaseStockQuantity(@Param("productId") String productId, @Param("quantity") int quantity);
+    int decreaseStockQuantity(@Param("productId") String id, @Param("quantity") int quantity);
 
     @Modifying
     @Query("UPDATE Product p SET p.soldQuantity = p.soldQuantity + :quantity WHERE p.id = :productId")
-    int increaseSoldQuantity(@Param("productId") String productId, @Param("quantity") int quantity);
+    int increaseSoldQuantity(@Param("productId") String id, @Param("quantity") int quantity);
 
     @Modifying
     @Query("UPDATE Product p SET p.ratingAvg = :ratingAvg, p.reviewCount = :reviewCount WHERE p.id = :productId")
-    int updateRating(@Param("productId") String productId,
+    int updateRating(@Param("productId") String id,
             @Param("ratingAvg") BigDecimal ratingAvg,
             @Param("reviewCount") int reviewCount);
 

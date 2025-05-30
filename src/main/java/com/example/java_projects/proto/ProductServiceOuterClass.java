@@ -46,8 +46,8 @@ public final class ProductServiceOuterClass {
     java.lang.String[] descriptorData = {
       "\n\035product/product_service.proto\022\037com.exa" +
       "mple.java_projects.proto\"\'\n\021GetProductRe" +
-      "quest\022\022\n\nproduct_id\030\001 \001(\t\"Z\n\022GetProductR" +
-      "esponse\022\022\n\nproduct_id\030\001 \001(\t\022\014\n\004name\030\002 \001(" +
+      "quest\022\022\n\nproduct_id\030\001 \001(\003\"Z\n\022GetProductR" +
+      "esponse\022\022\n\nproduct_id\030\001 \001(\003\022\014\n\004name\030\002 \001(" +
       "\t\022\023\n\013description\030\003 \001(\t\022\r\n\005price\030\004 \001(\001\"6\n" +
       "\023ListProductsRequest\022\014\n\004page\030\001 \001(\005\022\021\n\tpa" +
       "ge_size\030\002 \001(\005\"r\n\024ListProductsResponse\022E\n" +

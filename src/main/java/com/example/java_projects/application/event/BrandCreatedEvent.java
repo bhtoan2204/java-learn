@@ -1,6 +1,6 @@
 package com.example.java_projects.application.event;
 
-import java.math.BigDecimal;
+import com.example.java_projects.infrastructure.persistent.write.model.Brand.BrandStatus;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -13,16 +13,9 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Builder
 @Data
-public class ProductCreatedEvent {
+public class BrandCreatedEvent {
 
     private String id;
-
     private String name;
-    private String description;
-    private String sku;
-    private String categoryId;
-    private String brandId;
-    private BigDecimal price;
-    private BigDecimal discountPrice;
-    private Integer stockQuantity;
+    private BrandStatus status;
 }

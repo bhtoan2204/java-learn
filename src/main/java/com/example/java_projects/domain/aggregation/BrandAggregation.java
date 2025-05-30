@@ -7,32 +7,31 @@ import static org.axonframework.modelling.command.AggregateLifecycle.apply;
 import org.axonframework.spring.stereotype.Aggregate;
 import org.springframework.beans.BeanUtils;
 
-import com.example.java_projects.application.command.CreateProductCommand;
-import com.example.java_projects.application.event.ProductCreatedEvent;
-
-import lombok.NoArgsConstructor;
+import com.example.java_projects.application.command.CreateBrandCommand;
+import com.example.java_projects.application.event.BrandCreatedEvent;
+import com.example.java_projects.infrastructure.persistent.write.model.Brand.BrandStatus;
 
 @Aggregate
-@NoArgsConstructor
-public class ProductAggregation {
+public class BrandAggregation {
 
     @AggregateIdentifier
     private String id;
     private String name;
-    private String sku;
+    private BrandStatus status;
 
     @CommandHandler
-    public ProductAggregation(CreateProductCommand command) {
-        ProductCreatedEvent newProductCreatedEvent = new ProductCreatedEvent();
-        BeanUtils.copyProperties(command, newProductCreatedEvent);
-        apply(newProductCreatedEvent);
+    public BrandAggregation(CreateBrandCommand command) {
+        BrandCreatedEvent newBrandCreatedEvent = new BrandCreatedEvent();
 
+        BeanUtils.copyProperties(command, newBrandCreatedEvent);
+
+        apply(newBrandCreatedEvent);
     }
 
     @EventSourcingHandler
-    public void on(ProductCreatedEvent event) {
+    public void on(BrandCreatedEvent event) {
         this.id = event.getId();
         this.name = event.getName();
-        this.sku = event.getSku();
+        this.status = event.getStatus();
     }
 }

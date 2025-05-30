@@ -15,6 +15,12 @@ clean:
 
 rebuild: clean build
 
+up:
+	docker compose up -d --build
+
+down:
+	docker compose down
+
 protos:
 	protoc \
   --proto_path=./proto \

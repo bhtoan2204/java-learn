@@ -1,8 +1,8 @@
 package com.example.java_projects.presentation.dto;
 
-import lombok.Data;
-
 import java.math.BigDecimal;
+
+import lombok.Data;
 
 @Data
 public class CreateProductRequest {

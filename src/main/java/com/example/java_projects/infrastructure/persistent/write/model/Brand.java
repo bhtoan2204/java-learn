@@ -9,7 +9,6 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
-import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
@@ -28,7 +27,6 @@ import lombok.Setter;
 public class Brand {
 
     @Id
-    @GeneratedValue(generator = "uuid2")
     private String id;
 
     @Column(nullable = false)
@@ -37,8 +35,10 @@ public class Brand {
     @Column(columnDefinition = "TEXT")
     private String description;
 
+    @Column(columnDefinition = "TEXT")
     private String logoUrl;
 
+    @Column(columnDefinition = "TEXT")
     private String websiteUrl;
 
     @Enumerated(EnumType.STRING)

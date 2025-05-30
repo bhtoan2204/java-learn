@@ -9,14 +9,8 @@ public interface GetProductRequestOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>string product_id = 1;</code>
+   * <code>int64 product_id = 1;</code>
    * @return The productId.
    */
-  java.lang.String getProductId();
-  /**
-   * <code>string product_id = 1;</code>
-   * @return The bytes for productId.
-   */
-  com.google.protobuf.ByteString
-      getProductIdBytes();
+  long getProductId();
 }
