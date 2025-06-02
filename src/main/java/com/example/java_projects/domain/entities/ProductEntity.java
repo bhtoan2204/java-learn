@@ -5,11 +5,11 @@ import java.time.LocalDateTime;
 import java.util.HashSet;
 import java.util.Set;
 
-import com.example.java_projects.infrastructure.persistent.write.model.Brand;
-import com.example.java_projects.infrastructure.persistent.write.model.Product.ProductStatus;
-import com.example.java_projects.infrastructure.persistent.write.model.ProductAttribute;
-import com.example.java_projects.infrastructure.persistent.write.model.ProductImage;
-import com.example.java_projects.infrastructure.persistent.write.model.ProductVariant;
+import com.example.java_projects.infrastructure.projection.write.model.Brand;
+import com.example.java_projects.infrastructure.projection.write.model.Product.ProductStatus;
+import com.example.java_projects.infrastructure.projection.write.model.ProductAttribute;
+import com.example.java_projects.infrastructure.projection.write.model.ProductImage;
+import com.example.java_projects.infrastructure.projection.write.model.ProductVariant;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

@@ -6,8 +6,8 @@ import org.axonframework.eventhandling.EventHandler;
 import org.springframework.stereotype.Component;
 
 import com.example.java_projects.application.event.ProductCreatedEvent;
-import com.example.java_projects.infrastructure.persistent.write.model.Product;
-import com.example.java_projects.infrastructure.persistent.write.repository.FactoryRepository;
+import com.example.java_projects.infrastructure.projection.write.model.Product;
+import com.example.java_projects.infrastructure.projection.write.repository.FactoryRepository;
 
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;

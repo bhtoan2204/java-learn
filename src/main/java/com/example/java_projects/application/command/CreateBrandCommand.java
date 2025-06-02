@@ -2,7 +2,7 @@ package com.example.java_projects.application.command;
 
 import org.axonframework.modelling.command.TargetAggregateIdentifier;
 
-import com.example.java_projects.infrastructure.persistent.write.model.Brand.BrandStatus;
+import com.example.java_projects.infrastructure.projection.write.model.Brand.BrandStatus;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;

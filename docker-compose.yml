@@ -15,8 +15,9 @@ services:
       timeout: 10s
       retries: 10
     volumes:
-      - ./docker/axonserver/config:/axonserver/config
-      
+      - axonserver_data:/axonserver/data
+      - axonserver_config:/axonserver/config
+
   postgres:
     image: postgres:15
     environment:
@@ -46,6 +47,8 @@ services:
     environment:
       ZOOKEEPER_CLIENT_PORT: 2181
       ZOOKEEPER_TICK_TIME: 2000
+    volumes:
+      - zookeeper_data:/var/lib/zookeeper
 
   kafka:
     image: confluentinc/cp-kafka:7.3.2
@@ -62,6 +65,8 @@ services:
       KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
     depends_on:
       - zookeeper
+    volumes:
+      - kafka_data:/var/lib/kafka
 
   connect:
     image: debezium/connect:3.0.0.Final
@@ -79,6 +84,8 @@ services:
       - KEY_CONVERTER_SCHEMAS_ENABLE=false
       - VALUE_CONVERTER_SCHEMAS_ENABLE=false
     restart: always
+    volumes:
+      - connect_data:/kafka/connect
 
   kafka-ui:
     image: provectuslabs/kafka-ui:latest
@@ -91,5 +98,14 @@ services:
       - KAFKA_CLUSTERS_0_ZOOKEEPER=zookeeper:2181
     depends_on:
       - kafka
+    volumes:
+      - kafka_ui_data:/data
+
 volumes:
+  axonserver_data:
+  axonserver_config:
   postgres_data:
+  zookeeper_data:
+  kafka_data:
+  connect_data:
+  kafka_ui_data:

@@ -1,6 +1,6 @@
 package com.example.java_projects.application.event;
 
-import com.example.java_projects.infrastructure.persistent.write.model.Brand.BrandStatus;
+import com.example.java_projects.infrastructure.projection.write.model.Brand.BrandStatus;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

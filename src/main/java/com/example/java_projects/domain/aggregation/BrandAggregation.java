@@ -9,7 +9,7 @@ import org.springframework.beans.BeanUtils;
 
 import com.example.java_projects.application.command.CreateBrandCommand;
 import com.example.java_projects.application.event.BrandCreatedEvent;
-import com.example.java_projects.infrastructure.persistent.write.model.Brand.BrandStatus;
+import com.example.java_projects.infrastructure.projection.write.model.Brand.BrandStatus;
 
 @Aggregate
 public class BrandAggregation {
