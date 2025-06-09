@@ -1,0 +1,24 @@
+syntax = "proto3";
+package com.example.java_projects.proto;
+
+option go_package = "gateway/proto/wallet;wallet";
+option java_multiple_files = true;
+
+message CreateWalletRequest {
+  string owner_id = 1;     
+  string owner_type = 2;  
+  string currency = 3;  
+}
+
+message CreateWalletResponse {
+  string wallet_id = 1;     
+  string owner_id = 2;
+  string owner_type = 3;
+  string currency = 4;
+  int64 balance = 5;      
+  string created_at = 6;  
+}
+
+service WalletService {
+  rpc CreateWallet(CreateWalletRequest) returns (CreateWalletResponse);
+}

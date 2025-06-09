@@ -12,13 +12,16 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
-@Table(name = "refunds")
+@Table(name = "settlements")
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class Refund extends BaseEntity {
+public class Settlement extends BaseEntity {
+
+    @Column(nullable = false)
+    private String sellerId;
 
     @Column(nullable = false)
     private String paymentId;
@@ -26,14 +29,8 @@ public class Refund extends BaseEntity {
     @Column(nullable = false)
     private Long amount;
 
-    private String reason;
-
     @Column(nullable = false)
     private String status;
 
-    @Builder.Default
-    @Column(nullable = false)
-    private LocalDateTime requestedAt = LocalDateTime.now();
-
-    private LocalDateTime processedAt;
+    private LocalDateTime settledAt;
 }

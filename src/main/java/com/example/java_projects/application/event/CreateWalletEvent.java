@@ -1,7 +1,5 @@
 package com.example.java_projects.application.event;
 
-import com.example.java_projects.infrastructure.projection.write.model.Brand.BrandStatus;
-
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -13,9 +11,15 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Builder
 @Data
-public class BrandCreatedEvent {
+public class CreateWalletEvent {
 
-    private String id;
-    private String name;
-    private BrandStatus status;
+    private String walletId;
+
+    private String ownerId;
+
+    private String ownerType;
+
+    private String currency;
+
+    private Long balance;
 }

@@ -26,7 +26,7 @@ protos:
   --proto_path=./proto \
   --java_out=./src/main/java \
   --grpc-java_out=./src/main/java \
-  ./proto/product/product_service.proto
+  ./proto/*/*.proto
 
 
 dev:
